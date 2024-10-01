@@ -60,3 +60,120 @@ WHERE
     FIRST_NAME = 'Reinaldos';
 
 -- 
+
+-- DQL: DATA QUERY LANGUAGE
+-- hola mundo; Esto es un comentario!! 
+-- DROP DATABASE coderhouse_gamers;
+
+USE coderhouse_gamers;
+
+
+SELECT  -- --> SELECCIONA ALGO
+	* -- --> TODAS LAS COLS
+FROM coderhouse_gamers.SYSTEM_USER -- --> Esto le indica de donde va a tomar esto
+;
+
+
+-- UN POCO MAS DECLARATIVO
+
+SELECT 
+	LOWER(first_name) AS nombre
+,	LOWER(last_name) AS apellido
+,	email AS correo_electronico
+FROM
+    coderhouse_gamers.SYSTEM_USER;
+
+--
+
+SELECT DISTINCT
+	first_name AS nombre
+FROM
+    coderhouse_gamers.SYSTEM_USER;
+    
+    
+SELECT 
+	-- COUNT(first_name) -- 100 ROWS
+    COUNT(DISTINCT first_name) -- 954 ROWS
+FROM
+    coderhouse_gamers.SYSTEM_USER;
+
+
+
+-- NUEVA COLUMNA QUE ME DIGA SI ES ALGO VEDADERO
+SELECT 
+	first_name AS nombre
+,	first_name = 'Tam' AS 'es_tam?'  
+FROM
+    coderhouse_gamers.SYSTEM_USER
+-- WHERE Nos permite a nosotros hacer unas validacions que se los conoce  como filtros
+;
+
+
+SELECT 
+	first_name AS nombre,
+    last_name ,
+    email
+FROM
+    coderhouse_gamers.SYSTEM_USER
+WHERE 
+	first_name = 'Tam';
+    
+-- 
+
+-- buscar user = Tyson
+-- id_user_type > 334
+-- id_system_user = 56 y 88
+-- todos los first_name que arranquen con M
+
+SELECT 
+	*
+FROM
+    coderhouse_gamers.SYSTEM_USER
+WHERE 
+	first_name = 'Tyson';
+
+SELECT 
+	*
+FROM
+    coderhouse_gamers.SYSTEM_USER
+WHERE 
+	id_user_type > 334 ; -- "String" 'Sting' `String`
+
+
+    
+SELECT 
+	*
+FROM
+    coderhouse_gamers.SYSTEM_USER
+WHERE 
+	id_system_user = 56 OR id_system_user = 88 ;
+	-- id_system_user = 56 AND id_system_user = 88 ;
+
+
+
+SELECT 
+	first_name
+,	email
+
+FROM
+    coderhouse_gamers.SYSTEM_USER
+WHERE 
+		first_name LIKE 'M%'
+    AND	email LIKE '%.com' 
+    ;
+
+
+SELECT 
+	first_name
+,	email
+
+FROM
+    coderhouse_gamers.SYSTEM_USER
+WHERE 
+		first_name LIKE 'M%'
+    AND	email LIKE '%.com' 
+
+ORDER BY first_name DESC;
+    
+
+
