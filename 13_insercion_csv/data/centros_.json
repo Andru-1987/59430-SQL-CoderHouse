@@ -1,0 +1,27 @@
+[   {
+      "id_centro_recepcion": 1,
+      "ubicacion": "Av. Libertador 1234, Buenos Aires",
+      "encargado": "Roberto González"
+    },
+    {
+      "id_centro_recepcion": 2,
+      "ubicacion": "Calle San Martín 567, Córdoba",
+      "encargado": "Laura Martínez"
+    },
+    {
+      "id_centro_recepcion": 3,
+      "ubicacion": "Av. Santa Fe 890, Rosario",
+      "encargado": "Miguel Ángel Rodríguez"
+    },
+    {
+      "id_centro_recepcion": 4,
+      "ubicacion": "Av. Belgrano 432, Mendoza",
+      "encargado": "Carolina Silva"
+    },
+    {
+      "id_centro_recepcion": 5,
+      "ubicacion": "Calle Mayo 765, La Plata",
+      "encargado": "Fernando Pérez"
+    }
+]
+
