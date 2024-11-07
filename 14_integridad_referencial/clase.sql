@@ -17,18 +17,27 @@ CREATE TABLE ciudadano(
     id_ciudadano INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100),
     email    VARCHAR(100) UNIQUE,
-    id_ciudad INT  
+    id_ciudad INT  ,
+    CONSTRAINT solo_email CHECK (email LIKE '%@email%'),
+    CONSTRAINT solo_upper CHECK (nombre REGEXP '^[A-Z \d\W]+$')
 );
 
-
+CREATE TABLE ciudadano_doc(
+	id_doc INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    num_doc VARCHAR(25),
+    id_ciudadano INT ,
+    FOREIGN KEY (id_ciudadano) REFERENCES ciudadano(id_ciudadano)
+		ON DELETE CASCADE
+        ON UPDATE SET NULL
+);
 
 ALTER TABLE
     ciudad
     ADD CONSTRAINT fk_ciudad_pais
     FOREIGN KEY (id_pais) REFERENCES pais(id_pais)
     ON UPDATE 
-		SET NULL
-        -- CASCADE
+		-- SET NULL
+        CASCADE
         
 	ON DELETE
 		CASCADE
@@ -74,11 +83,11 @@ INSERT INTO ciudad (nombre, id_pais) VALUES
 -- Insertar ciudadanos (10 por país, distribuidos en sus ciudades)
 INSERT INTO ciudadano (nombre, email, id_ciudad) VALUES 
 -- España - Madrid
-('Ana García', 'ana.garcia@email.com', 1),
-('Carlos Martínez', 'carlos.martinez@email.com', 1),
-('Elena Rodríguez', 'elena.rodriguez@email.com', 1),
-('David López', 'david.lopez@email.com', 1),
-('María Sánchez', 'maria.sanchez@email.com', 1),
+-- ('Ana García', 'ana.garcia@email.com', 1),
+-- ('Carlos Martínez', 'carlos.martinez@email.com', 1),
+-- ('Elena Rodríguez', 'elena.rodriguez@email.com', 1),
+-- ('David López', 'david.lopez@email.com', 1),
+-- ('María Sánchez', 'maria.sanchez@email.com', 1),
 -- España - Barcelona
 ('Pablo Torres', 'pablo.torres@email.com', 2),
 ('Laura Navarro', 'laura.navarro@email.com', 2),
@@ -183,5 +192,3 @@ TRUNCATE TABLE integridad.pais;
 
 
 -- triggers
-
-
