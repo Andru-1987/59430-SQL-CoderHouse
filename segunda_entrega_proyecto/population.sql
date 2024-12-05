@@ -26,12 +26,12 @@ INSERT INTO donaton.centro_recepcion (ubicacion, encargado) VALUES
 ('Paseo del Sol 654', 'Daniel Morales');
 
 -- Insertando datos en la tabla voluntario
--- INSERT INTO donaton.voluntario (nombre, fecha_nacimiento) VALUES
--- ('Luis González', '1990-05-15'),
--- ('Patricia Flores', '1988-09-22'),
--- ('Fernando Castro', '1995-03-10'),
--- ('Alejandra Díaz', '1992-11-30'),
--- ('Ricardo Mendoza', '1985-07-25');
+INSERT INTO donaton.voluntario (nombre, fecha_nacimiento) VALUES
+('Luis González', '1990-05-15'),
+('Patricia Flores', '1988-09-22'),
+('Fernando Castro', '1995-03-10'),
+('Alejandra Díaz', '1992-11-30'),
+('Ricardo Mendoza', '1985-07-25');
 
 -- Insertando datos en la tabla categoria_voluntario
 INSERT INTO donaton.categoria_voluntario (descripcion_tareas) VALUES

@@ -19,6 +19,8 @@ BEGIN
     IF existen_donadores THEN
         DROP TABLE IF EXISTS donaton.donadores_fecha;
 
+        SELECT 'Se generara la tabla';
+
         CREATE TABLE donaton.donadores_fecha
             AS
             SELECT  nombre,

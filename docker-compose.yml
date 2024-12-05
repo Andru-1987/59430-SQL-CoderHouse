@@ -1,0 +1,12 @@
+version: "3.1"
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql-server
+    environment:
+      MYSQL_ROOT_PASSWORD: coderhouse
+    ports:
+      - 3333:3306
+    volumes:
+      - ./segunda_entrega_proyecto:/proyecto_sql
