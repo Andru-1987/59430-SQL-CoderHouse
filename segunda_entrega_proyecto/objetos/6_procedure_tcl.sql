@@ -38,7 +38,9 @@ BEGIN
         SELECT 'Felicitaciones por la donacion, gracias coderhouse :) ' AS mensaje;
         COMMIT;
     END IF;
-
+    
+    SELECT * FROM  donaton.donacion
+    ORDER BY id_donacion DESC;
 
 
 END //
