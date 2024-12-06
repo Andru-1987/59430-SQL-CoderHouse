@@ -47,8 +47,6 @@ BEGIN
         AS mensaje;
 
     END IF;
-
-    SELECT * FROM donaton.donadores_fecha;
         
 
 END //
